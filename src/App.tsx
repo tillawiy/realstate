@@ -4,6 +4,7 @@ import { AdminDashboard } from './components/AdminDashboard';
 import { PropertyDetailsPage } from './components/PropertyDetailsPage';
 import { FavoritesPage } from './components/FavoritesPage';
 import { Toaster } from './components/ui/sonner';
+import { Footer } from './components/Footer';
 
 export type PropertyType = 'sale' | 'rent';
 
@@ -123,47 +124,52 @@ function App() {
   const favoriteProperties = properties.filter(p => favorites.includes(p.id));
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-16" dir="rtl">
-      {currentPage === 'home' && (
-        <PropertyListingPage
-          properties={properties}
-          onViewDetails={handleViewDetails}
-          onNavigate={setCurrentPage}
-          userRole={userRole}
-          favorites={favorites}
-          onToggleFavorite={toggleFavorite}
-        />
-      )}
-      
-      {currentPage === 'favorites' && (
-        <FavoritesPage
-          properties={favoriteProperties}
-          onViewDetails={handleViewDetails}
-          onNavigate={setCurrentPage}
-          favorites={favorites}
-          onToggleFavorite={toggleFavorite}
-          userRole={userRole}
-        />
-      )}
-      
-      {currentPage === 'admin' && (
-        <AdminDashboard
-          properties={properties}
-          onAddProperty={handleAddProperty}
-          onUpdateProperty={handleUpdateProperty}
-          onDeleteProperty={handleDeleteProperty}
-          onNavigate={setCurrentPage}
-        />
-      )}
+    <div className="min-h-screen bg-gray-50 pb-16 flex flex-col" dir="rtl">
+      <div className="flex-1">
+        {currentPage === 'home' && (
+          <PropertyListingPage
+            properties={properties}
+            onViewDetails={handleViewDetails}
+            onNavigate={setCurrentPage}
+            userRole={userRole}
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
+          />
+        )}
+        
+        {currentPage === 'favorites' && (
+          <FavoritesPage
+            properties={favoriteProperties}
+            onViewDetails={handleViewDetails}
+            onNavigate={setCurrentPage}
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
+            userRole={userRole}
+          />
+        )}
+        
+        {currentPage === 'admin' && (
+          <AdminDashboard
+            properties={properties}
+            onAddProperty={handleAddProperty}
+            onUpdateProperty={handleUpdateProperty}
+            onDeleteProperty={handleDeleteProperty}
+            onNavigate={setCurrentPage}
+          />
+        )}
 
-      {currentPage === 'details' && selectedProperty && (
-        <PropertyDetailsPage
-          property={selectedProperty}
-          onBack={() => setCurrentPage('home')}
-          isFavorite={favorites.includes(selectedProperty.id)}
-          onToggleFavorite={() => toggleFavorite(selectedProperty.id)}
-        />
-      )}
+        {currentPage === 'details' && selectedProperty && (
+          <PropertyDetailsPage
+            property={selectedProperty}
+            onBack={() => setCurrentPage('home')}
+            isFavorite={favorites.includes(selectedProperty.id)}
+            onToggleFavorite={() => toggleFavorite(selectedProperty.id)}
+          />
+        )}
+      </div>
+
+      {/* Footer - Only show on home, favorites, and admin pages */}
+      {currentPage !== 'details' && <Footer />}
       
       <Toaster position="top-center" dir="rtl" />
     </div>

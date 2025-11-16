@@ -12,7 +12,6 @@ import { Plus, Pencil, Trash2, Settings } from 'lucide-react';
 import { toast } from 'sonner@2.0.3';
 import { BottomNav } from './BottomNav';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Footer } from './Footer';
 
 interface AdminDashboardProps {
   properties: Property[];
@@ -495,9 +494,6 @@ export function AdminDashboard({
           </SheetFooter>
         </SheetContent>
       </Sheet>
-
-      {/* Footer */}
-      <Footer />
 
       {/* Bottom Navigation */}
       <BottomNav currentPage="admin" onNavigate={onNavigate} userRole="admin" />

@@ -7,7 +7,6 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { Tabs, TabsList, TabsTrigger } from './ui/tabs';
 import { Search, SlidersHorizontal, Home, Heart, Settings } from 'lucide-react';
 import { BottomNav } from './BottomNav';
-import { Footer } from './Footer';
 
 interface PropertyListingPageProps {
   properties: Property[];
@@ -168,9 +167,6 @@ export function PropertyListingPage({
           ))}
         </div>
       )}
-
-      {/* Footer */}
-      <Footer />
 
       {/* Bottom Navigation */}
       <BottomNav currentPage="home" onNavigate={onNavigate} userRole={userRole} />

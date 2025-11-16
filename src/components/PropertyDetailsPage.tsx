@@ -5,7 +5,6 @@ import { Card, CardContent } from './ui/card';
 import { ArrowRight, MapPin, Bed, Bath, Maximize, Check, Phone, Mail, Heart, Share2 } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { toast } from 'sonner@2.0.3';
-import { Footer } from './Footer';
 
 interface PropertyDetailsPageProps {
   property: Property;
@@ -156,9 +155,6 @@ export function PropertyDetailsPage({ property, onBack, isFavorite, onToggleFavo
           </Card>
         </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
 
       {/* Bottom Action Bar */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 shadow-lg z-10">
