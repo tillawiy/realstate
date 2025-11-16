@@ -2,6 +2,7 @@ import { Property, PageType, UserRole } from '../App';
 import { PropertyCard } from './PropertyCard';
 import { Heart } from 'lucide-react';
 import { BottomNav } from './BottomNav';
+import { Footer } from './Footer';
 
 interface FavoritesPageProps {
   properties: Property[];
@@ -57,6 +58,9 @@ export function FavoritesPage({
           ))}
         </div>
       )}
+
+      {/* Footer */}
+      <Footer />
 
       {/* Bottom Navigation */}
       <BottomNav currentPage="favorites" onNavigate={onNavigate} userRole={userRole} />

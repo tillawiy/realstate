@@ -101,10 +101,17 @@ realstate/
 
 نرحب بمساهماتكم! يرجى فتح issue أو pull request.
 
+## 👨‍💻 المطور
+
+**tillawiy**
+
+- GitHub: [@tillawiy](https://github.com/tillawiy)
+- Repository: [realstate](https://github.com/tillawiy/realstate)
+
 ## 📧 التواصل
 
 للاستفسارات والدعم، يرجى فتح issue في المستودع.
 
 ---
 
-Made with ❤️ using React & TypeScript
+Made with ❤️ by [tillawiy](https://github.com/tillawiy) using React & TypeScript
